@@ -1,0 +1,104 @@
+msgid "plugins.generic.wosrrs.displayName"
+msgstr "Web of Science Reviewer Recognition Service Plugin"
+
+msgid "plugins.generic.wosrrs.description"
+msgstr "Este plugin permite que você publique suas avaliações no Web of Science."
+
+msgid "plugins.generic.wosrrs.button.submitExportReview"
+msgstr "Exportar meu parecer para Web of Science"
+
+msgid "plugins.generic.wosrrs.button.publishedReview"
+msgstr "Essa avaliação já foi publicada no Web of Science"
+
+msgid "plugins.generic.wosrrs.button.completeReview"
+msgstr "Você deve submeter o seu parecer antes de exportar ele para Web of Science"
+
+msgid "plugins.generic.wosrrs.notifications.settingsUpdated"
+msgstr "Configurações atualizadas"
+
+msgid "plugins.generic.wosrrs.settings.connection"
+msgstr "Conexão"
+
+msgid "plugins.generic.wosrrs.settings.journalTokenRequired"
+msgstr "Por favor, insira o API key correto para sua integração com Web of Science Reviewer Recognition Service."
+
+msgid "plugins.generic.wosrrs.settings.auth_tokenDescription"
+msgstr "The Authorization token for the specified account (you can find that on https://publons.com/api/v2/ under Token)."
+
+msgid "plugins.generic.wosrrs.settings.authTokenRequired"
+msgstr "Please ensure that your Authorization token is correct."
+
+msgid "plugins.generic.wosrrs.settings.journalToken"
+msgstr "API Key"
+
+msgid "plugins.generic.wosrrs.settings.auth_token"
+msgstr "Authorization Token"
+
+msgid "plugins.generic.wosrrs.settings.journalTokenDescription"
+msgstr "O código API do periódico utilizado para exportar avaliações para Web of Science"
+
+msgid "plugins.generic.wosrrs.confirmation.title"
+msgstr "Enviar seu parecer para Web of Science"
+
+msgid "plugins.generic.wosrrs.confirmation.termsAndConditions"
+msgstr "<p>Você optou por exportar suas avaliações para Web of Science. <br> <a href=\"https://clarivate.com/wp-content/uploads/dlm_uploads/2022/07/Product-Terms_3.4-Web-of-Science-Reviewer-Recognition.pdf\" target=\"_blank\">Termos e condições</a>.</p>"
+
+msgid "plugins.generic.wosrrs.notice.title"
+msgstr "Exportar minha revisão para Web of Science"
+
+msgid "plugins.generic.wosrrs.notice.explanation"
+msgstr "Você poderá exportar sua revisão para <a href=\"https://clarivate.com/products/scientific-and-academic-research/research-publishing-solutions/reviewer-recognition-service/reviewer-recognition-for-reviewers/\" target=\"_blank\">Web of Science</a> na aba 4 após submetê-la."
+
+msgid "plugins.generic.wosrrs.export.successful"
+msgstr "A avaliação foi exportada com sucesso"
+
+msgid "plugins.generic.wosrrs.export.duplicate"
+msgstr "Essa avaliação já foi publicada no Web of Science"
+
+msgid "plugins.generic.wosrrs.export.error"
+msgstr "Erro ao exportar para Web of Science"
+
+msgid "plugins.generic.wosrrs.export.error.400"
+msgstr "Há um erro de permissão/acesso. Por favor, entre em contato com o administrador deste periódico."
+
+msgid "plugins.generic.wosrrs.export.error.500"
+msgstr "Há um erro no servidor. Web of Science não está respondendo, por favor tente novamente em 10 minutos."
+
+msgid "plugins.generic.wosrrs.export.claimReview"
+msgstr "Reconhecer parecer"
+
+msgid "plugins.generic.wosrrs.export.next.autoClaimed"
+msgstr "Seu parecer foi solicitado manualmente em Web of Science."
+
+msgid "plugins.generic.wosrrs.export.next.partnerEmailed"
+msgstr "O periódico enviou um email para você com o link para reconhecer este parecer ou você pode clicar no link abaixo."
+
+msgid "plugins.generic.wosrrs.export.next.reviewerEmailed"
+msgstr "Web of Science enviou um email para você com o link para reconhecer este parecer ou você pode clicar no link abaixo."
+
+msgid "plugins.generic.wosrrs.export.next.setAutoClaim"
+msgstr "Para pular esta etapa no futuro, por favor selecione “Automatically add reviews from partnered journals” nas configurações do seu Web of Science Researcher Profile."
+
+msgid "plugins.generic.wosrrs.export.next.linkClick"
+msgstr "Você optou por não receber emails de Web of Science, para reconhecer este parecer você deve clicar no link abaixo."
+
+msgid "plugins.generic.wosrrs.export.error.alreadyExported"
+msgstr "Essa avaliação já foi publicada no Web of Science"
+
+msgid "plugins.generic.wosrrs.export.error.reviewNotSubmitted"
+msgstr "Você deve submeter o seu parecer antes de poder exportar ele para Web of Science"
+
+msgid "plugins.generic.wosrrs.export.error.invalidUser"
+msgstr "Informações de login OJS inválidas"
+
+msgid "plugins.generic.wosrrs.settings.info"
+msgstr ""
+"<p><a href=\mailto:reviewservices@clarivate.com\">Envie-nos um e-mail</a> para começar a dar reconhecimento aos seus revisores. Forneceremos a você os Authorization and Journal Token(s) necessários para concluir as próximas etapas.</p>"
+"<p>Para ativar o plugin, preencha os dados abaixo</p>"
+
+msgid "plugins.generic.wosrrs.settings.ps"
+msgstr ""
+"<p>Depois de ativar o plugin, a opção de enviar as avaliações ficará disponível aos revisores na página com os dados da submissão.</p><p> Se o avaliador optar por receber o crédito pela avaliação, a informação será seguramente enviada para Publons, e o avaliador receberá um email de Publons (para o endereço registrado na revista) com um link para reconhecer a avaliação.</p>"
+"<p>Se o revisor optar por obter reconhecimento, os dados serão transmitidos com segurança ao Web of Science após o envio da revisão. O revisor receberá um e-mail (no endereço de e-mail registrado na revista) contendo um link para solicitar sua revisão.</p>"
+"<p>Os revisores serão solicitados a fazer login no Web of Science e a avaliação será adicionada à sua conta. Os revisores podem selecionar \Adicionar automaticamente avaliações de periódicos parceiros\" nas configurações do perfil de pesquisador do Web of Science para eliminar etapas.</p>"
+"<p>O Web of Science não publicará conteúdo de resenhas, a menos que o periódico e o revisor permitam.</p>"

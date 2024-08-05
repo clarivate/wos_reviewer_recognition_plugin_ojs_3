@@ -1,0 +1,106 @@
+msgid "plugins.generic.wosrrs.displayName"
+msgstr "Web of Science Reviewer Recognition Service Плагин"
+
+msgid "plugins.generic.wosrrs.description"
+msgstr "Данный плагин позволяет добавлять рецензии к профилю рецензента на Web of Science."
+
+msgid "plugins.generic.wosrrs.button.submitExportReview"
+msgstr "Отправить мою рецензию Web of Science"
+
+msgid "plugins.generic.wosrrs.button.publishedReview"
+msgstr "Эта рецензия уже отправлена Web of Science"
+
+msgid "plugins.generic.wosrrs.button.completeReview"
+msgstr "Вы должны закончить свою рецензию прежде чем отправлять её Web of Science"
+
+msgid "plugins.generic.wosrrs.notifications.settingsUpdated"
+msgstr "настройки обновлены"
+
+msgid "plugins.generic.wosrrs.settings.connection"
+msgstr "Настройки"
+
+msgid "plugins.generic.wosrrs.settings.journalTokenRequired"
+msgstr "Пожалуйста введите верный API ключ журнала для интеграции с Web of Science Reviewer Recognition Service."
+
+msgid "plugins.generic.wosrrs.settings.auth_tokenDescription"
+msgstr "Токен авторизации для указанного аккаунта (вы найдете его на странице https://publons.com/api/v2/ под заголовком Token)."
+
+msgid "plugins.generic.wosrrs.settings.authTokenRequired"
+msgstr "Пожалуйста убедитесь что токен авторизации указан верно."
+
+msgid "plugins.generic.wosrrs.settings.journalToken"
+msgstr "API ключ"
+
+msgid "plugins.generic.wosrrs.settings.auth_token"
+msgstr "Токен авторизации"
+
+msgid "plugins.generic.wosrrs.settings.journalTokenDescription"
+msgstr "API ключ журнала для отправки рецензий Web of Science"
+
+msgid "plugins.generic.wosrrs.confirmation.title"
+msgstr "Отправить мою рецензию Web of Science"
+
+msgid "plugins.generic.wosrrs.confirmation.termsAndConditions"
+msgstr "<p>Вы согласились отправить свою рецензию Web of Science. <br> <a href=\"https://clarivate.com/wp-content/uploads/dlm_uploads/2022/07/Product-Terms_3.4-Web-of-Science-Reviewer-Recognition.pdf\" target=\"_blank\">Условия использования</a>.</p>"
+
+msgid "plugins.generic.wosrrs.notice.title"
+msgstr "Добавить мою рецензию к профилю Web of Science"
+
+msgid "plugins.generic.wosrrs.notice.explanation"
+msgstr "Вы сможете добавить свою рецензию на <a href=\"https://clarivate.com/products/scientific-and-academic-research/research-publishing-solutions/reviewer-recognition-service/reviewer-recognition-for-reviewers/\" target=\"_blank\">Web of Science</a> на 4й вкладке по окончании рецензирования."
+
+msgid "plugins.generic.wosrrs.export.successful"
+msgstr "Данная рецензия успешно отправлена"
+
+msgid "plugins.generic.wosrrs.export.duplicate"
+msgstr "Эта рецензия уже отправлена Web of Science"
+
+msgid "plugins.generic.wosrrs.export.error"
+msgstr "Ошибка отправки рецензии Web of Science"
+
+msgid "plugins.generic.wosrrs.export.error.400"
+msgstr "Ошибка доступа. Пожалуйста свяжитесь с администратором журнала."
+
+msgid "plugins.generic.wosrrs.export.error.500"
+msgstr "Ошибка сервера. Web of Science не отвечает, пожалуйста попробуйте еще раз через 10 минут."
+
+msgid "plugins.generic.wosrrs.export.claimReview"
+msgstr "Добавить рецензию"
+
+msgid "plugins.generic.wosrrs.export.next.autoClaimed"
+msgstr "Ваша рецензия была автоматически добавлена к профилю Web of Science."
+
+msgid "plugins.generic.wosrrs.export.next.partnerEmailed"
+msgstr "Ссылка на добавление рецензии была отправлена вам по email от журнала, вы также можете добавить рецензию нажав на кнопку ниже."
+
+msgid "plugins.generic.wosrrs.export.next.reviewerEmailed"
+msgstr "Ссылка на добавление рецензии была отправлена вам по email от Web of Science, вы также можете добавить рецензию нажав на кнопку ниже."
+
+msgid "plugins.generic.wosrrs.export.next.setAutoClaim"
+msgstr "Чтобы пропустить данный шаг в будущем - выберите \"Автоматически добавлять рецензии, сделанные для журналов партнеров и спонсоров\" в настройках Web of Science Researcher Profile."
+
+msgid "plugins.generic.wosrrs.export.next.linkClick"
+msgstr "Вы отписаны от писем Web of Science, для добавления рецензии Вам надо перейти по ссылке ниже."
+
+msgid "plugins.generic.wosrrs.export.error.alreadyExported"
+msgstr "Эта рецензия уже отправлена Web of Science"
+
+msgid "plugins.generic.wosrrs.export.error.reviewNotSubmitted"
+msgstr "Вы должны закончить свою рецензию прежде чем отправлять её Web of Science"
+
+msgid "plugins.generic.wosrrs.export.error.invalidUser"
+msgstr "Неверные имя пользователя/пароль для журнала"
+
+msgid "plugins.generic.wosrrs.settings.info"
+msgstr ""
+"<p>a href=\mailto:reviewservices@clarivate.com\">Напишите нам</a>, чтобы начать выражать признание вашим рецензентам. Мы предоставим вам токен авторизации и API ключ журнала (Authorization and Journal Token(s)), необходимые для выполнения следующих шагов.</p>"
+"<p>Для активации плагина заполните поля ниже:</p>"
+
+msgid "plugins.generic.wosrrs.settings.ps"
+msgstr ""
+"<p>После того как вы активируете плагин, рецензенты смогут получить признание за свои обзоры на странице отправки рецензии.</p>"
+"<p>Если рецензент согласится на признание, данные будут безопасно переданы в Web of Science после завершения рецензии. Рецензент получит электронное письмо (на адрес электронной почты, который он зарегистрировал в журнале), содержащее ссылку для добавления рецензии.</p>"
+"<p>Рецензентам будет предложено войти в Web of Science, и обзор будет добавлен в их учетную запись. Рецензенты могут выбрать вариант \"Автоматически добавлять рецензии, сделанные для журналов партнеров и спонсоров\" в настройках профиля исследователя Web of Science, чтобы исключить этот шаг.</p>"
+"<p>Web of Science не будет публиковать рецензии, если это не разрешено журналом и рецензентом.</p>"
+
+

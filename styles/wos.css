@@ -1,0 +1,75 @@
+/**
+ * plugins/generic/webOfScience/styles/wos.css
+ *
+ * Copyright (c) 2024 Clarivate
+ * Distributed under the GNU GPL v3.
+ *
+ * webOfScience styling
+ *
+ */
+
+.wos-button {
+    padding: 0px;
+    text-align: left;
+    background-color: #ddd;
+    border: none;
+    border-radius: 3px;
+    transition-property: all;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+}
+
+.wos-button,
+.wos-button span {
+    display: inline-block;
+    padding: 0px 20px 0px 0px;
+    text-align: left;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    line-height: 40px;
+    text-decoration: none;
+    color: #111;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.wos-button:hover {
+    background-color: #aaa;
+}
+
+.wos-button img,
+.wos-button span img {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+#wos-header{
+    margin-left: -16px;
+    margin-right: -16px;
+    margin-top: -16px;
+}
+
+#wos-background {
+    background-color: #aaa;
+    width: 100%;
+    text-align: center;
+}
+
+#wos-background img{
+    height: 80px;
+    margin: 10px 0px;
+}
+
+#wos-content {
+    font-size: 16px;
+    font-family: Roboto, sans-serif !important;
+}
+
+#wos-content h2 {
+    font-size: 28.8px;
+    font-family: Roboto, sans-serif !important;
+}
