@@ -144,7 +144,6 @@ class WOSHandler extends Handler
             $dateRequested = new DateTime($reviewAssignment->getDateNotified());
             $dateCompleted = new DateTime($reviewAssignment->getDateCompleted());
 
-//            $locale = AppLocale::getLocale();
             $locale = Locale::getLocale();
 
             $wosReview = new WOSReview();
