@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
+
+<!--
+  * version.xml
+  *
+  * copyright (c) 2024 Clarivate.
+  * Distributed under the GNU GPL v3.
+  *
+  * Plugin version information.
+  -->
+<version>
+	<application>webOfScience</application>
+	<type>plugins.generic</type>
+	<release>1.3.4.0</release>
+	<date>2024-08-05</date>
+	<lazy-load>1</lazy-load>
+	<class>WebOfSciencePlugin</class>
+</version>
