@@ -29,7 +29,7 @@ msgid "plugins.generic.wosrrs.settings.authTokenRequired"
 msgstr "Please ensure that your Authorization token is correct."
 
 msgid "plugins.generic.wosrrs.settings.journalToken"
-msgstr "API Key"
+msgstr "Journal token"
 
 msgid "plugins.generic.wosrrs.settings.auth_token"
 msgstr "Authorization Token"
