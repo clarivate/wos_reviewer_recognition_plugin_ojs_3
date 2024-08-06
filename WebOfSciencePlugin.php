@@ -90,8 +90,6 @@ class WebOfSciencePlugin extends GenericPlugin {
      * @see GenericPlugin::manage()
      */
     function manage($args, $request) {
-//        $templateManager = TemplateManager::getManager($request);
-//        $templateManager->registerPlugin('function', 'plugin_url', [$this, 'smartyPluginUrl']);
         switch ($request->getUserVar('verb')) {
             case 'connect':
                 $context = $request->getContext();
