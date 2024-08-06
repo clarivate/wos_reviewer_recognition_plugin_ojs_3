@@ -111,7 +111,6 @@ class WOSHandler extends Handler
                 }
             }
             if ($reviewFormId = $reviewAssignment->getReviewFormId()) {
-//                $reviewId = $reviewAssignment->getId();
                 $reviewFormResponseDao = DAORegistry::getDAO('ReviewFormResponseDAO');
                 $reviewFormElementDao = DAORegistry::getDAO('ReviewFormElementDAO');
                 $reviewFormElements = $reviewFormElementDao->getByReviewFormId($reviewFormId)->toArray();
