@@ -16,190 +16,191 @@ namespace APP\plugins\generic\webOfScience\classes;
 
 use PKP\core\DataObject;
 
-class WOSReview extends DataObject {
+class WOSReview extends DataObject
+{
 
-	/**
-	 * Get the submission ID of the referral
+    /**
+     * Get the submission ID of the referral
      *
-	 * @return int
-	 */
-	function getSubmissionId(): int
-	{
-		return $this->getData('submissionId');
-	}
-
-	/**
-	 * Set the submission ID of the review
-     *
-	 * @param $submissionId int
-	 */
-	function setSubmissionId(int $submissionId): void
+     * @return int
+     */
+    function getSubmissionId(): int
     {
-		$this->setData('submissionId', $submissionId);
-	}
+        return $this->getData('submissionId');
+    }
 
-	/**
-	 * Get the journal ID of the review
+    /**
+     * Set the submission ID of the review
      *
-	 * @return int
-	 */
-	function getJournalId(): int
+     * @param $submissionId int
+     */
+    function setSubmissionId(int $submissionId): void
     {
-		return $this->getData('journalId');
-	}
+        $this->setData('submissionId', $submissionId);
+    }
 
-	/**
-	 * Set the journal ID of the review
+    /**
+     * Get the journal ID of the review
      *
-	 * @param $journalId int
-	 */
-	function setJournalId(int $journalId): void
+     * @return int
+     */
+    function getJournalId(): int
     {
-		$this->setData('journalId', $journalId);
-	}
+        return $this->getData('journalId');
+    }
 
-	/**
-	 * Get the reviewer ID of the review
+    /**
+     * Set the journal ID of the review
      *
-	 * @return int
-	 */
-	function getReviewerId(): int
+     * @param $journalId int
+     */
+    function setJournalId(int $journalId): void
     {
-		return $this->getData('reviewerId');
-	}
+        $this->setData('journalId', $journalId);
+    }
 
-	/**
-	 * Set the reviewer ID of the review
+    /**
+     * Get the reviewer ID of the review
      *
-	 * @param $reviewerId int
-	 */
-	function setReviewerId(int $reviewerId): void
+     * @return int
+     */
+    function getReviewerId(): int
     {
-		$this->setData('reviewerId', $reviewerId);
-	}
+        return $this->getData('reviewerId');
+    }
 
-	/**
-	 * Get the ID of the review
+    /**
+     * Set the reviewer ID of the review
      *
-	 * @return int
-	 */
-	function getReviewId(): int
-	{
-		return $this->getData('reviewId');
-	}
-
-	/**
-	 * Set the review ID of the review
-     *
-	 * @param $reviewId int
-	 */
-	function setReviewId(int $reviewId): void
+     * @param $reviewerId int
+     */
+    function setReviewerId(int $reviewerId): void
     {
-		$this->setData('reviewId', $reviewId);
-	}
+        $this->setData('reviewerId', $reviewerId);
+    }
 
-	/**
-	 * Get the date added a review into the Web of Science
+    /**
+     * Get the ID of the review
      *
-	 * @return string
-	 */
-	function getDateAdded(): string
+     * @return int
+     */
+    function getReviewId(): int
     {
-		return $this->getData('dateAdded');
-	}
+        return $this->getData('reviewId');
+    }
 
-	/**
-	 * Set the date added a review into the Web of Science.
+    /**
+     * Set the review ID of the review
      *
-	 * @param $dateAdded string
-	 */
-	function setDateAdded(string $dateAdded): void
+     * @param $reviewId int
+     */
+    function setReviewId(int $reviewId): void
+    {
+        $this->setData('reviewId', $reviewId);
+    }
+
+    /**
+     * Get the date added a review into the Web of Science
+     *
+     * @return string
+     */
+    function getDateAdded(): string
+    {
+        return $this->getData('dateAdded');
+    }
+
+    /**
+     * Set the date added a review into the Web of Science.
+     *
+     * @param $dateAdded string
+     */
+    function setDateAdded(string $dateAdded): void
     {
         $this->setData('dateAdded', $dateAdded);
-	}
+    }
 
-	/**
-	 * Get the localized title of the article
+    /**
+     * Get the localized title of the article
      *
-	 * @return string
-	 */
-	function getLocalizedTitle(): string
+     * @return string
+     */
+    function getLocalizedTitle(): string
     {
-		return $this->getLocalizedData('title');
-	}
+        return $this->getLocalizedData('title');
+    }
 
-	/**
-	 * Get the title of the article
+    /**
+     * Get the title of the article
      *
-	 * @param $locale string
-	 * @return string
-	 */
-	function getTitle(string $locale): string
+     * @param $locale string
+     * @return string
+     */
+    function getTitle(string $locale): string
     {
-		return $this->getData('title', $locale);
-	}
+        return $this->getData('title', $locale);
+    }
 
-	/**
-	 * Set the title of the article
+    /**
+     * Set the title of the article
      *
-	 * @param $title string
-	 * @param $locale string
-	 */
-	function setTitle(string $title, string $locale): void
+     * @param $title string
+     * @param $locale string
+     */
+    function setTitle(string $title, string $locale): void
     {
         $this->setData('title', $title ? $title : '', $locale);
-	}
+    }
 
-	/**
-	 * Get the title_en of the article
+    /**
+     * Get the title_en of the article
      *
-	 * @return string
-	 */
-	function getTitleEn(): string
+     * @return string
+     */
+    function getTitleEn(): string
     {
-		return $this->getData('titleEn');
-	}
+        return $this->getData('titleEn');
+    }
 
-	/**
-	 * Set the title_en of the article
+    /**
+     * Set the title_en of the article
      *
-	 * @param $title string
-	 */
-	function setTitleEn(string $title): void
+     * @param $title string
+     */
+    function setTitleEn(string $title): void
     {
         $this->setData('titleEn', $title);
-	}
+    }
 
-	/**
-	 * Get the content of the review for the Web of Science
+    /**
+     * Get the content of the review for the Web of Science
      *
-	 * @return string
-	 */
-	function getLocalizedContent(): string
+     * @return string
+     */
+    function getLocalizedContent(): string
     {
-		return $this->getLocalizedData('content');
-	}
+        return $this->getLocalizedData('content');
+    }
 
-	/**
-	 * Get the content of the review for the Web of Science
+    /**
+     * Get the content of the review for the Web of Science
      *
-	 * @param $locale string
-	 * @return string
-	 */
-	function getContent(string $locale): string
+     * @param $locale string
+     * @return string
+     */
+    function getContent(string $locale): string
     {
-		return $this->getData('content', $locale);
-	}
+        return $this->getData('content', $locale);
+    }
 
-	/**
-	 * Set the content of the review for the Web of Science.
+    /**
+     * Set the content of the review for the Web of Science.
      *
-	 * @param $content string
-	 * @param $locale string
-	 */
-	function setContent(string $content, string $locale): void
+     * @param $content string
+     * @param $locale string
+     */
+    function setContent(string $content, string $locale): void
     {
         $this->setData('content', $content ? $content : '', $locale);
-	}
+    }
 
 }
