@@ -14,6 +14,7 @@
 
 namespace APP\plugins\generic\webOfScience;
 
+use APP\core\Application;
 use DateTime;
 use PKP\db\DAORegistry;
 use PKP\core\Core;
@@ -21,6 +22,8 @@ use PKP\core\PKPString;
 use PKP\facades\Locale;
 use PKP\submission\SubmissionComment;
 use PKP\reviewForm\ReviewFormElement;
+use PKP\security\Role;
+use PKP\security\authorization\ContextAccessPolicy;
 
 use APP\facades\Repo;
 use APP\handler\Handler;
@@ -28,14 +31,33 @@ use APP\handler\Handler;
 use APP\plugins\generic\webOfScience\classes\WOSReview;
 use APP\plugins\generic\webOfScience\classes\WOSReviewsDAO;
 
-use Request;
-use TemplateManager;
+use APP\core\Request;
+use APP\template\TemplateManager;
 
 class WOSHandler extends Handler
 {
 
     /** @var webOfSciencePlugin The Web of Science plugin */
     static webOfSciencePlugin $plugin;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->addRoleAssignment(Role::ROLE_ID_REVIEWER, 'exportReview');
+    }
+
+    /**
+     * @copydoc PKPHandler::authorize()
+     * @return bool
+     */
+    public function authorize($request, &$args, $roleAssignments)
+    {
+        $this->addPolicy(new ContextAccessPolicy($request, $roleAssignments));
+        return parent::authorize($request, $args, $roleAssignments);
+    }
 
     /**
      * Set plugin
@@ -50,11 +72,16 @@ class WOSHandler extends Handler
 
     /**
      * Confirm you want to export the review (GET) then export it (POST)
+     *
      * @param array $args
      * @param Request $request
+     * @return \PKP\core\JSONMessage|void
+     * @throws \Exception
      */
     function exportReview(array $args, $request)
     {
+        var_dump($request->getContext());
+        die();
         $plugin = self::$plugin;
         $templateManager = TemplateManager::getManager();
         $templateManager->addStyleSheet('publons-base', $request->getBaseUrl() . '/' . $plugin->getStyleSheet());
@@ -159,7 +186,6 @@ class WOSHandler extends Handler
             $wosReviewsDAO = new WOSReviewsDAO();
             DAORegistry::registerDAO('WOSReviewsDAO', $wosReviewsDAO);
 
-            $headers = ["Authorization: Token " . $auth_token, 'Content-Type: application/json'];
             $data = [
                 'key' => $auth_key,
                 'reviewer' => [
@@ -188,72 +214,34 @@ class WOSHandler extends Handler
             $json_data = str_replace("\\\\", '\\', $json_data);
             $templateManager->assign('json_data', $json_data);
 
-            if (isset($_SERVER["HTTP_WOS_URL"])) {
-                $url = $_SERVER["HTTP_WOS_URL"] . "/api/v2/review/";
-            } else {
-                $url = "https://publons.com/api/v2/review/";
-            }
-            $options = array(
-                CURLOPT_SSL_VERIFYPEER => false,
-                CURLOPT_POST => true,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_URL => $url,
-                CURLOPT_HTTPHEADER => $headers,
-                CURLOPT_POSTFIELDS => $json_data
-            );
-            $response = $this->_curlPost($options);
-
-            // If success then save into database
-            if (($response['status'] >= 200) && ($response['status'] < 300)) {
-                $wosReviewsDAO->insertObject($wosReview);
-            }
-
-            $templateManager->assign('status', $response['status']);
-            if ($response['status'] == 201) {
-                $templateManager->assign('serverAction', $response['result']['action']);
-                if (isset($_SERVER["HTTP_WOS_URL"])) {
-                    $claimUrl = $_SERVER["HTTP_WOS_URL"] . "/wos/op/review-claim/integration/" . $response['result']['token'];
-                } else {
-                    $claimUrl = "https://www.webofscience.com/wos/op/review-claim/integration/" . $response['result']['token'];
+            $url = 'https://publons.com/api/v2/review/';
+            $httpClient = Application::get()->getHttpClient();
+            try {
+                $response = $httpClient->request('POST', $url, [
+                    'headers' => [
+                        'Authorization' => 'Token ' . $auth_token,
+                        'Content-Type' => 'application/json'
+                    ],
+                    'body' => $json_data
+                ]);
+                $r_status = $response->getStatusCode();
+                $r_body = json_decode($response->getBody());
+                if (($r_status >= 200) && ($r_status < 300)) {
+                    // If success then save into database
+                    $wosReviewsDAO->insertObject($wosReview);
                 }
-                $templateManager->assign('claimURL', $claimUrl);
+                if($r_status == 201) {
+                    $claimUrl = "https://www.webofscience.com/wos/op/review-claim/integration/" . $r_body->token;
+                    $templateManager->assign('claimURL', $claimUrl);
+                    $templateManager->assign('serverAction', $r_body->action);
+                }
+                $templateManager->assign('status', $r_status);
+            } catch (\Throwable $e) {
+                $templateManager->assign('status', $e->getResponse()->getStatusCode());
             }
-            $templateManager->assign('result', $response['result']);
-            $templateManager->assign('error', $response['error']);
             return $templateManager->fetchJson($plugin->getTemplateResource('wosExportResults.tpl'));
         }
 
-    }
-
-    /**
-     * Post a request to a resource using CURL.
-     *
-     * @param array $options
-     * @return array
-     */
-    function _curlPost(array $options): array
-    {
-        $curl = curl_init();
-        curl_setopt_array($curl, $options);
-        $httpResult = curl_exec($curl);
-        $httpStatus = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        $httpError = curl_error($curl);
-        curl_close($curl);
-        return [
-            'status' => $httpStatus,
-            'result' => json_decode($httpResult, true),
-            'error' => $httpError
-        ];
-    }
-
-    /**
-     * Check if cURL is available
-     *
-     * @return bool
-     */
-    function curlInstalled(): bool
-    {
-        return function_exists('curl_version');
     }
 
 }
