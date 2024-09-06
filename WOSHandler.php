@@ -80,8 +80,6 @@ class WOSHandler extends Handler
      */
     function exportReview(array $args, $request)
     {
-        var_dump($request->getContext());
-        die();
         $plugin = self::$plugin;
         $templateManager = TemplateManager::getManager();
         $templateManager->addStyleSheet('publons-base', $request->getBaseUrl() . '/' . $plugin->getStyleSheet());
