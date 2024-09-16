@@ -83,7 +83,6 @@ class WOSHandler extends Handler
         $plugin = self::$plugin;
         $templateManager = TemplateManager::getManager();
         $templateManager->addStyleSheet('publons-base', $request->getBaseUrl() . '/' . $plugin->getStyleSheet());
-        $templateManager->addStyleSheet('publons-font', 'https://fonts.googleapis.com/css?family=Roboto');
 
         $reviewId = intval($args[0]);
         $user = $request->getUser();
@@ -119,6 +118,10 @@ class WOSHandler extends Handler
             return $templateManager->fetchJson($plugin->getTemplateResource('wosExportReviewForm.tpl'));
         } elseif ($request->isPost()) {
             $journalId = $submission->getData('contextId');
+            if($request->getContext()->getId() != $journalId) {
+                $templateManager->assign('info', __('plugins.generic.wosrrs.export.error.400'));
+                return $templateManager->fetchJson($plugin->getTemplateResource('wosExportResults.tpl'));
+            }
             $submissionId = $submission->getId();
             $rtitle = $submission->getCurrentPublication()->getLocalizedTitle();
             $rtitle_en = $submission->getCurrentPublication()->getLocalizedTitle('en');
