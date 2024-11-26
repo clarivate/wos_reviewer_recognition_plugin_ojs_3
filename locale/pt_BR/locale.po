@@ -41,7 +41,7 @@ msgid "plugins.generic.wosrrs.confirmation.title"
 msgstr "Enviar seu parecer para Web of Science"
 
 msgid "plugins.generic.wosrrs.confirmation.termsAndConditions"
-msgstr "<p>Você optou por exportar suas avaliações para Web of Science. <br> <a href=\"https://clarivate.com/wp-content/uploads/dlm_uploads/2022/07/Product-Terms_3.4-Web-of-Science-Reviewer-Recognition.pdf\" target=\"_blank\">Termos e condições</a>.</p>"
+msgstr "<p>Você optou por exportar suas avaliações para Web of Science. <br> <a href=\"https://clarivate.com/wp-content/uploads/dlm_uploads/Product-Terms_3.4-Web-of-Science-Reviewer-Recognition.pdf\" target=\"_blank\">Termos e condições</a>.</p>"
 
 msgid "plugins.generic.wosrrs.notice.title"
 msgstr "Exportar minha revisão para Web of Science"
