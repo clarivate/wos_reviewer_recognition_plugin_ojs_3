@@ -12,8 +12,8 @@
 <version>
 	<application>webOfScience</application>
 	<type>plugins.generic</type>
-	<release>1.3.4.1</release>
-	<date>2024-10-03</date>
+	<release>1.3.4.2</release>
+	<date>2024-11-26</date>
 	<lazy-load>1</lazy-load>
 	<class>WebOfSciencePlugin</class>
 </version>
