@@ -90,8 +90,7 @@ class WOSHandler extends Handler
         $WOSReviewsDao = DAORegistry::getDAO('WOSReviewsDAO');
         $exported = $WOSReviewsDao->getWOSReviewIdByReviewId($reviewId);
 
-        $reviewAssignmentDao = DAORegistry::getDAO('ReviewAssignmentDAO');
-        $reviewAssignment = $reviewAssignmentDao->getById($reviewId);
+        $reviewAssignment = Repo::reviewAssignment()->get($reviewId);
         $reviewerId = $reviewAssignment->getReviewerId();
 
         if ($exported) {
@@ -238,7 +237,7 @@ class WOSHandler extends Handler
                 }
                 $templateManager->assign('status', $r_status);
             } catch (\Throwable $e) {
-                $templateManager->assign('status', $e->getResponse()->getStatusCode());
+                $templateManager->assign('status', $e->getCode());
             }
             return $templateManager->fetchJson($plugin->getTemplateResource('wosExportResults.tpl'));
         }

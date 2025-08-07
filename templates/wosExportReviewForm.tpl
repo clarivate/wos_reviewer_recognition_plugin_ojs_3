@@ -27,7 +27,7 @@
         </div>
         <div id="wos-content">
             <div id="wosExport">
-                <h2>{translate key="plugins.generic.wosrrs.confirmation.title"}</h2>
+                <h2 class="mb-2">{translate key="plugins.generic.wosrrs.confirmation.title"}</h2>
                 <p>{translate key="plugins.generic.wosrrs.confirmation.termsAndConditions"}</p>
             </div>
         </div>

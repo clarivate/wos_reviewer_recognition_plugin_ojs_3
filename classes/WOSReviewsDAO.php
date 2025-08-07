@@ -136,7 +136,7 @@ class WOSReviewsDAO extends DAO {
      */
     function getInsertObjectId(): int
     {
-        return $this->_getInsertId('publons_reviews', 'publons_reviews_id');
+        return $this->getInsertId('publons_reviews', 'publons_reviews_id');
     }
 
     /**
