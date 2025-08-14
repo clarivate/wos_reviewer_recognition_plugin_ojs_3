@@ -9,14 +9,20 @@ This plugin provides the ability to send and publish reviews to Web of Science R
 This plugin is licensed under the GNU General Public License v3.
 
 ### System Requirements
-- OJS 3.4
+- OJS 3.4 - 3.5
 - CURL support for PHP.
 - ZipArchive support for PHP.
 
 ### Installation
-To install the plugin:
- - Download the `tar.gz` plugin file from https://github.com/clarivate/wos_reviewer_recognition_plugin_ojs_3/releases
+Option #1 (from OJS plugin gallery)
+ - On your OJS site go to Settings > Website > Plugins > Plugin Gallery
+ - Search for "Web of Science Reviewer Recognition" plugin and if found, install
+
+Option #2 (when not available via OJS plugin gallery)
+ - Download the `tar.gz` plugin file for your OJS version from https://github.com/clarivate/wos_reviewer_recognition_plugin_ojs_3/releases
  - On your OJS site go to Settings > Website > Plugins > Upload a New Plugin, select the file you downloaded and click "Save"
+
+Enable and configure:
  - Enable the plugin by going to:  Settings > Website > Plugins > Installed Plugins and ticking "ENABLE" for the "Web of Science Reviewer Recognition Service Plugin"
  - Set up correct credentials to post reviews to Web of Science in the "Connection" tab under plugin
    - Enter the Authorization Token of the Web of Science Researcher Profile user <b>who has API access to Reviewer Recognition Service</b>. Authorization Token can be found here: https://publons.com/api/v2 (note: you need to be logged in to see this).
