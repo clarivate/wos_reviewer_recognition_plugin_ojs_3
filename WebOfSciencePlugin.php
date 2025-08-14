@@ -110,12 +110,14 @@ class WebOfSciencePlugin extends GenericPlugin {
 
     function handleRequest($hookName, $params): bool
     {
-        $page = $params[0];
+        $page = &$params[0];
         if ($page == 'reviewer' && $this->getEnabled()) {
-            $op = $params[1];
+            $op = &$params[1];
+            $handler = &$params[3];
             if ($op == 'exportReview') {
-                define('HANDLER_CLASS', WOSHandler::class);
-                WOSHandler::setPlugin($this);
+                $wosHandler = new WOSHandler();
+                $wosHandler->setPlugin($this);
+                $handler = $wosHandler;
                 return true;
             }
         }
@@ -181,7 +183,7 @@ class WebOfSciencePlugin extends GenericPlugin {
     function step3SubmissionOutputFilter($output, $templateManager) {
         $plugin = PluginRegistry::getPlugin('generic', $this->getName());
         $submission = $templateManager->getTemplateVars('submission');
-        $journalId = $submission->getJournalId();
+        $journalId = $submission->getData('contextId');
         $auth_token = $plugin->getSetting($journalId, 'auth_token');
         // Only display if the plugin has been set up
         if($auth_token) {
@@ -215,7 +217,7 @@ class WebOfSciencePlugin extends GenericPlugin {
     {
         $plugin = PluginRegistry::getPlugin('generic', $this->getName());
         $submission = $templateManager->getTemplateVars('submission');
-        $journalId = $submission->getJournalId();
+        $journalId = $submission->getData('contextId');
         $auth_token = $plugin->getSetting($journalId, 'auth_token');
         // Only display if the plugin has been set up
         if($auth_token) {
