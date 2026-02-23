@@ -4,6 +4,7 @@ Developed and maintained by: Clarivate with the support from PLANet Systems Grou
 
 ### About
 This plugin provides the ability to send and publish reviews to Web of Science Researcher Profiles (formerly known as Publons, https://webofscience.com) from OJS hosted journals.
+Plugin for OJS 3.1 - 3.3 versions can be found in the following repository: https://github.com/clarivate/wos_reviewer_recognition_plugin_ojs_old
 
 ### License
 This plugin is licensed under the GNU General Public License v3.
